@@ -1,0 +1,15 @@
+<h1><%= @song.title %></h1>
+<h2><%= @song.category %></h2>
+<h3><%= @song.year %></h3>
+<br>
+<h2>Here are the reviews for this song:</h2>
+<ol>
+  <% @song.reviews.each do |review| %>
+    <li>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ol>
+<hr>
+<%= link_to 'Add a review', new_song_review_path(@song) %>
+<%= link_to 'Back', songs_path %>
